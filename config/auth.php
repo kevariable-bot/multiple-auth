@@ -46,6 +46,13 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins'
+        ],
+
+        // if need api just create here. like 'api-admin'
     ],
 
     /*
@@ -70,6 +77,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class
+        ]
 
         // 'users' => [
         //     'driver' => 'database',
@@ -99,6 +111,13 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+
+        'admin' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 15,
+            'throttle' => 15
+        ]
     ],
 
     /*
