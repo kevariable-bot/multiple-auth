@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    @component('components.guard_status')
+                    @endcomponent
                 </div>
             </div>
         </div>
