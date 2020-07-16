@@ -35,4 +35,11 @@ class LoginController extends Controller
 
         return redirect()->back()->withInput($request->only('email'));
     }
+
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+
+        return redirect('/');
+    }
 }
